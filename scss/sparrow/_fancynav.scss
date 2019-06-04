@@ -8,10 +8,10 @@
   width: 100%;
   font-family: $font-family-sans-serif;
   
-  @include media-breakpoint-up($navBreakPointUp) {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
     right: 0;
     height: 100vh;
-    width: $fancyNavWidth;
+    width: $fancynav-width;
     
     &.fancynavbar-left{
       left: 0;
@@ -27,11 +27,11 @@
 .fancynavbar-togglerbar {
   display: flex;
   justify-content: space-between;
-  @include media-breakpoint-down($navBreakPointDown) {
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
     align-items: center;
-    height: $fancyNavHeight;
+    height: $fancynavHeight;
   }
-  @include media-breakpoint-up($navBreakPointUp) {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
     height: 100%;
     text-align: center;
     flex-direction: column;
@@ -57,10 +57,10 @@
 -----------------------------------------------*/
 .fancynavbar-toggler {
   cursor: pointer;
-  width: $fancyNavWidth;
-  height: $fancyNavWidth;
+  width: $fancynav-width;
+  height: $fancynav-width;
   opacity: 1 !important;
-  @include media-breakpoint-down($navBreakPointDown) { transform: translateY(4%); }
+  @include media-breakpoint-down($fancynav-breakpoint-down) { transform: translateY(4%); }
 }
 .fancynavbar-toggler-icon {
   path {
@@ -77,7 +77,7 @@
 |   Fancy Navbar Addon
 -----------------------------------------------*/
 .fancynavbar-addon {
-  @include media-breakpoint-down($navBreakPointDown) { display: none !important; }
+  @include media-breakpoint-down($fancynav-breakpoint-down) { display: none !important; }
   padding-left: 0;
 }
 .fancynavbar-addon-item {
@@ -102,32 +102,32 @@
   overflow: auto;
   position: absolute;
   text-align: left;
-  width: calc(50vw - #{$fancyNavWidth / 2});
-  right: calc(50% + #{$fancyNavWidth / 2});
+  width: calc(50vw - #{$fancynav-width / 2});
+  right: calc(50% + #{$fancynav-width / 2});
   transform: translateX(100%);
   top: 0;
   padding: 0;
   z-index: -1;
   backdrop-filter: blur(20px);
-  background-color: $black;
+  background-color: $fancynav-collapse-bg;
   opacity: 0.92;
 
-  @include media-breakpoint-down($navBreakPointDown) {
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
     width: 100vw;
-    top: $fancyNavHeight;
+    top: $fancynavHeight;
     right: 0;
-    height: calc(100vh - #{$fancyNavHeight});
+    height: calc(100vh - #{$fancynavHeight});
   }
 
-  @include media-breakpoint-up($navBreakPointUp) {
-    padding-left: $fancyNavWidth;
-    padding-right: $fancyNavWidth;
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    padding-left: $fancynav-width;
+    padding-right: $fancynav-width;
   }
 }
 .fancynavbar-left .fancynavbar-collapse {
-  left: calc(50% + #{$fancyNavWidth / 2});
+  left: calc(50% + #{$fancynav-width / 2});
   right: auto;
-  @include media-breakpoint-down($navBreakPointDown){
+  @include media-breakpoint-down($fancynav-breakpoint-down){
     left: 0;
   }
 }
@@ -144,7 +144,7 @@
   padding-left: map_get($spacers, 3);
   padding-right: map_get($spacers, 3);
   margin: auto 0;
-  @include media-breakpoint-up($navBreakPointUp) {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -159,16 +159,16 @@
   display: block;
 
   font-size: map_get($font-sizes, 2);
-  @include media-breakpoint-between(sm, $navBreakPointDown) { font-size: map_get($font-sizes, 3); }
+  @include media-breakpoint-between(sm, $fancynav-breakpoint-down) { font-size: map_get($font-sizes, 3); }
   @include media-breakpoint-up(xl) { font-size: map_get($font-sizes, 3); }
 
-  @include media-breakpoint-up($navBreakPointUp) {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
     padding-right: map_get($spacers, 5);
     padding-left: map_get($spacers, 5);
   }
 
   &:before {
-    //@include media-breakpoint-up($navBreakPointUp) { content: ''; }
+    //@include media-breakpoint-up($fancynav-breakpoint-up) { content: ''; }
     content: '';
     position: absolute;
     height: 2px;
@@ -178,7 +178,7 @@
     transform: translateY(-50%);
     border-radius: 2px;
     transition: all 0.5s;
-    background-color: $gray-600;
+    background-color: rgba($fancynav-link-color, 0.5);
     z-index: 0;
   }
 
@@ -187,22 +187,22 @@
 
     &:after {
       position: absolute;
-      left: calc(100% - #{$fancyNavWidth / 2});
+      left: calc(100% - #{$fancynav-width / 2});
       top: 0;
       transform: translateY(-50%);
-      content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMi4zMyA3LjAzIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2UwZTBlMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkFzc2V0IDlzcGFycm93PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNi4xNyw3YS44Ni44NiwwLDAsMS0uNjEtLjI1TC4yNSwxLjQ3QS44Ni44NiwwLDEsMSwxLjQ3LjI1TDYuMTcsNC45NSwxMC44Ni4yNWEuODYuODYsMCwwLDEsMS4yMiwxLjIybC01LjMsNS4zQS44Ni44NiwwLDAsMSw2LjE3LDdaIi8+PC9nPjwvZz48L3N2Zz4=);
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.33 7.03"><defs><style>.cls-1{fill:#{rgba($fancynav-link-color, 0.85)};}</style></defs><title>Asset 9sparrow</title><g id="Layer_2" data-name="Layer 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M6.17,7a.86.86,0,0,1-.61-.25L.25,1.47A.86.86,0,1,1,1.47.25L6.17,4.95,10.86.25a.86.86,0,0,1,1.22,1.22l-5.3,5.3A.86.86,0,0,1,6.17,7Z"/></g></g></svg>');
       text-align: center;
       color: white;
       width: 15px;
       height: 10px;
-      background-color: $black;
+      background-color: transparent;
       z-index: 99;
     }
   }
 
   &.show {
     &:before { width: 100%; }
-    .fancynav-link-content:after { content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNi41IDkuNDEiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZTBlMGUwO308L3N0eWxlPjwvZGVmcz48dGl0bGU+QXNzZXQgNnNwYXJyb3c8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJDYXBhXzEiIGRhdGEtbmFtZT0iQ2FwYSAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjI1LDBhMS4xNSwxLjE1LDAsMCwxLC44Mi4zNGw3LjA5LDcuMDlhMS4xNiwxLjE2LDAsMCwxLTEuNjMsMS42M0w4LjI1LDIuNzksMiw5LjA3QTEuMTYsMS4xNiwwLDEsMSwuMzQsNy40M0w3LjQzLjM0QTEuMTUsMS4xNSwwLDAsMSw4LjI1LDBaIi8+PC9nPjwvZz48L3N2Zz4=); }
+    .fancynav-link-content:after { content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 9.41"><defs><style>.cls-1{fill:#{rgba($fancynav-link-color, 0.85)};}</style></defs><title>Asset 6sparrow</title><g id="Layer_2" data-name="Layer 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M8.25,0a1.15,1.15,0,0,1,.82.34l7.09,7.09a1.16,1.16,0,0,1-1.63,1.63L8.25,2.79,2,9.07A1.16,1.16,0,1,1,.34,7.43L7.43.34A1.15,1.15,0,0,1,8.25,0Z"/></g></g></svg>'); }
   }
 }
 
@@ -211,8 +211,8 @@
 |   Fancy Navbar Link Content
 -----------------------------------------------*/
 .fancynav-link-content {
-  color: $gray-300;
-  background-color: $black;
+  color: rgba($fancynav-link-color, 0.85);
+  background-color: $fancynav-collapse-bg;
   display: inline-block;
   padding-left: map_get($spacers, 3);
   padding-right: map_get($spacers, 3);
@@ -229,13 +229,13 @@
   transition: height 0.4s cubic-bezier(.77, 0, .18, 1);
   
   height: 41px;
-  @include media-breakpoint-between(sm, $navBreakPointDown) { height: 54px; }
+  @include media-breakpoint-between(sm, $fancynav-breakpoint-down) { height: 54px; }
   @include media-breakpoint-up(xl) { height: 54px; }
   
   @include hover-focus {
     .fancynav-link-content {
       text-decoration: none;
-      color: $white;
+      color: $fancynav-link-color;
     }
     .fancynav-link:before { width: 100%; }
   }
@@ -248,14 +248,14 @@
 .fancy-dropdown-menu {
   transition: height 0.2s cubic-bezier(.77, 0, .18, 1);
 
-  @include media-breakpoint-down($navBreakPointDown) {
+  @include media-breakpoint-down($fancynav-breakpoint-down) {
     margin-left: map_get($spacers, 2);
     margin-right: map_get($spacers, 2);
     padding-right: map_get($spacers, 4);
     padding-left: map_get($spacers, 4);
   }
 
-  @include media-breakpoint-up($navBreakPointUp) {
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
     padding-right: map_get($spacers, 6);
     padding-left: map_get($spacers, 6);
   }
@@ -266,13 +266,13 @@
 |   Fancy Dropdown Item
 -----------------------------------------------*/
 .fancy-dropdown-item {
-  color: $gray-500;
+  color: rgba($fancynav-link-color, 0.6);
   font-weight: 700;
   display: block;
   transition: $transition-base;
 
   @include hover-focus {
-    color: $white;
+    color: $fancynav-link-color;
     text-decoration: none;
   }
 }
@@ -284,14 +284,14 @@
 -----------------------------------------------*/
 
 .has-sidemenu {
-  .main { @include media-breakpoint-up($navBreakPointUp) { width: calc(100% - (#{$fancyNavWidth} - 0.0625rem)); } }
+  .main { @include media-breakpoint-up($fancynav-breakpoint-up) { width: calc(100% - (#{$fancynav-width} - 0.0625rem)); } }
 
-  @include media-breakpoint-up($navBreakPointUp) {
-    .footer { width: calc(100% - #{$fancyNavWidth}); }
-    .remodal { right: #{$fancyNavWidth / 2}; }
+  @include media-breakpoint-up($fancynav-breakpoint-up) {
+    .footer { width: calc(100% - #{$fancynav-width}); }
+    .remodal { right: #{$fancynav-width / 2}; }
   }
 }
-.has-sidemenu-left { .main, .footer { @include media-breakpoint-up($navBreakPointUp) { margin-left: $fancyNavWidth; } } }
+.has-sidemenu-left { .main, .footer { @include media-breakpoint-up($fancynav-breakpoint-up) { margin-left: $fancynav-width; } } }
 
 
 /*-----------------------------------------------
@@ -301,11 +301,11 @@
   .fancynav {
     .fancynavbar {
       height: 100vh;
-      @include media-breakpoint-down($navBreakPointDown) { height: calc(100vh - #{$fancyNavHeight}); }
+      @include media-breakpoint-down($fancynav-breakpoint-down) { height: calc(100vh - #{$fancynavHeight}); }
 
       .fancynavbar-content {
         height: 100vh;
-        @include media-breakpoint-down($navBreakPointDown) { height: calc(100vh - #{$fancyNavHeight}); }
+        @include media-breakpoint-down($fancynav-breakpoint-down) { height: calc(100vh - #{$fancynavHeight}); }
       }
     }
   }

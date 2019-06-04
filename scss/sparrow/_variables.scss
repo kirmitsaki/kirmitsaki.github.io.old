@@ -348,7 +348,9 @@ $breadcrumb-divider: quote("\00BB") !default;
 //*-----------------------------------------------
 //|   Fancynav
 //-----------------------------------------------*/
-$fancyNavWidth: 4.375rem;
-$navBreakPointUp: lg;
-$navBreakPointDown: md;
-$fancyNavHeight: 3rem;
+$fancynav-width: 4.375rem !default;
+$fancynav-breakpoint-up: lg !default;
+$fancynav-breakpoint-down: md !default;
+$fancynavHeight: 3rem !default;
+$fancynav-collapse-bg: $black !default;
+$fancynav-link-color: $white !default;

@@ -46,7 +46,7 @@ const Paths = {
       './js/bootstrap/scrollspy.js',
       './js/bootstrap/tab.js',
     ],
-    SPARROW: 'js/sparrow/**/*.js',
+    SPARROW: ['js/sparrow/Utils.js', 'js/sparrow/!(Utils)*.js'],
     PLUGINS: ['js/plugins/imagesloaded.pkgd.js', 'js/plugins/TweenMax.js', 'js/plugins/ScrollToPlugin.js', 'js/plugins/CustomEase.js', 'js/plugins/DrawSVGPlugin.js', 'js/plugins/fontawesome-all.js'],
   },
   SCSS: {
@@ -147,12 +147,16 @@ const Paths = {
       TO: lib,
     },
     'bootstrap-js': {
-      FROM: 'node_modules/bootstrap/js/src/!(index)*.js',
+      FROM: 'node_modules/bootstrap/js/dist/!(index)*.js',
       TO: 'js/bootstrap',
     },
     'bootstrap-scss': {
       FROM: 'node_modules/bootstrap/scss/**/*.scss',
       TO: 'scss/bootstrap',
+    },
+    jtap: {
+      FROM: 'node_modules/jtap/jquery.tap.js',
+      TO: lib,
     },
   },
   GENERATED: [
@@ -160,7 +164,6 @@ const Paths = {
     'scss/bootstrap',
     'pages/assets/css',
     'pages/assets/js',
-    'pages/assets/lib',
   ],
 };
 
@@ -275,7 +278,7 @@ gulp.task('js:sparrow', () => gulp.src(Paths.JS.SPARROW)
   .pipe(eslint({ fix: true }))
   .pipe(eslint.format())
   .pipe(eslint.failAfterError())
-  .pipe(concat('preloader.js'))
+  .pipe(concat('theme.js'))
   .pipe(replace(/^(export|import).*/gm, ''))
   .pipe(babel({
     compact: false,

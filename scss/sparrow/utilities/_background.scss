@@ -74,6 +74,8 @@
   }
 }
 
+.overlay-z-index-1:before{ z-index: 1; }
+
 .bg-fixed {
   background-attachment: fixed;
 }
