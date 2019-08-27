@@ -32,6 +32,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Mono%7cPT+Serif:400,400i%7cLato:100,300,400,700,800,900" rel="stylesheet">
     <link href="assets/lib/remodal/remodal.css" rel="stylesheet">
     <link href="assets/lib/remodal/remodal-default-theme.css" rel="stylesheet">
+    <link href="assets/lib/fancybox/jquery.fancybox.min.css" rel="stylesheet">
     <link href="assets/lib/owl.carousel/owl.carousel.css" rel="stylesheet">
     <link href="assets/css/theme.css" rel="stylesheet">
 
@@ -75,13 +76,19 @@
             <a class="fancynav-link" href="index.html"><span class="fancynav-link-content">home</span></a>
           </li>
           <li class="fancynav-item">
-            <a class="fancynav-link" href="ck-about.html"><span class="fancynav-link-content">about</span></a>
+            <a class="fancynav-link" href="about.html"><span class="fancynav-link-content">about</span></a>
           </li>
           <li class="fancynav-item">
-            <a class="fancynav-link" href="ck-design.html"><span class="fancynav-link-content">design</span></a>
+            <a class="fancynav-link" href="ux-ui-design.html"><span class="fancynav-link-content">ux/ui design</span></a>
           </li>
           <li class="fancynav-item">
-            <a class="fancynav-link" href="ck-artwork.html"><span class="fancynav-link-content">artwork</span></a>
+            <a class="fancynav-link" href="web-design.html"><span class="fancynav-link-content">web design</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="fancynav-link" href="lab.html"><span class="fancynav-link-content">laboratory</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="fancynav-link" href="artwork.html"><span class="fancynav-link-content">artwork</span></a>
           </li>
         </ul>
       </div>
@@ -89,7 +96,6 @@
     <!--===============================================-->
     <!--    End of Fancynav-->
     <!--===============================================-->
-
 
 
     <!-- ===============================================-->
@@ -135,7 +141,7 @@
                   <div data-zanim-timeline='{"delay":0.4}' data-zanim-trigger="scroll">
                     <div class="overflow-hidden">
                       <div data-zanim-xs='{"delay":0.1}'>
-                        <a class="btn btn-link pl-0 text-black" href="ck-design.html"><span class="fas fa-chevron-left" data-fa-transform="down-1"></span><span class="pl-2 font-weight-bold">portfolio showcase</span></a>
+                        <a class="btn btn-link pl-0 text-black" href="web-design.html"><span class="fas fa-chevron-left" data-fa-transform="down-1"></span><span class="pl-2 font-weight-bold">web design showcase</span></a>
                       </div>
                     </div>
                     <div class="overflow-hidden">
@@ -187,19 +193,26 @@
                     </div>
                   </div>
                   <div class="row my-6">
-                    <div class="col-sm-12">
-                      <img class="rounded img-fluid" src="assets/img/portfolio-work/casestudy/gallery-1.png" alt="" data-zanim-xs='{"delay":0.1,"animation":"zoom-in"}' data-zanim-trigger="scroll">
+                    <div class="card p-1">
+                      <a href="assets/img/portfolio-work/casestudy/gallery-1.png" data-fancybox="group" data-caption="">
+                        <img src="assets/img/portfolio-work/casestudy/gallery-1.png" class="card-img-top" alt="">
+                      </a>
                     </div>
-                    <div class="col-sm-12 mt-4">
-                      <img class="rounded img-fluid" src="assets/img/portfolio-work/casestudy/gallery-4.png" alt="" data-zanim-xs='{"delay":0.2,"animation":"zoom-in"}' data-zanim-trigger="scroll">
+                    <div class="card p-1 mt-4">
+                      <a href="assets/img/portfolio-work/casestudy/gallery-4.png" data-fancybox="group" data-caption="">
+                        <img src="assets/img/portfolio-work/casestudy/gallery-4.png" class="card-img-top" alt="">
+                      </a>
                     </div>
-                    <div class="col-sm-12 mt-4">
-                      <img class="rounded img-fluid" src="assets/img/portfolio-work/casestudy/gallery-2.png" alt="" data-zanim-xs='{"delay":0.2,"animation":"zoom-in"}' data-zanim-trigger="scroll">
+                    <div class="card p-1 mt-4">
+                      <a href="assets/img/portfolio-work/casestudy/gallery-2.png" data-fancybox="group" data-caption="">
+                        <img src="assets/img/portfolio-work/casestudy/gallery-2.png" class="card-img-top" alt="">
+                      </a>
                     </div>
-                    <div class="col-sm-12 mt-4">
-                      <img class="rounded img-fluid" src="assets/img/portfolio-work/casestudy/gallery-3.png" alt="" data-zanim-xs='{"delay":0.2,"animation":"zoom-in"}' data-zanim-trigger="scroll">
+                    <div class="card p-1 mt-4">
+                      <a href="assets/img/portfolio-work/casestudy/gallery-3.png" data-fancybox="group" data-caption="">
+                        <img src="assets/img/portfolio-work/casestudy/gallery-3.png" class="card-img-top" alt="">
+                      </a>
                     </div>
-
                   </div>
                 </div>
                 <div class="col-12 bg-200 py-7 my-6 text-center">
@@ -231,8 +244,6 @@
     <!-- ===============================================-->
 
 
-
-
     <!--===============================================-->
     <!--    Footer-->
     <!--===============================================-->
@@ -256,7 +267,6 @@
     </footer>
 
 
-
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
@@ -270,6 +280,7 @@
     <script src="assets/lib/jtap/jquery.tap.js"></script>
     <script src="assets/js/rellax.min.js"></script>
     <script src="assets/lib/owl.carousel/owl.carousel.js"></script>
+    <script src="assets/lib/fancybox/jquery.fancybox.min.js"></script>
     <script src="assets/js/theme.js"></script>
 
   </body>
